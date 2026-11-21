@@ -12,6 +12,9 @@ Thumbs.db
 __pycache__/
 *.pyc
 
+# 工作区元数据
+.workbuddy/
+
 # 本地敏感配置（切勿提交）
 .env
 .env.*
