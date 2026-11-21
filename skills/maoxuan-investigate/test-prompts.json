@@ -1,0 +1,48 @@
+{
+  "skill": "maoxuan-investigate",
+  "version": "1.0.0",
+  "test_cases": [
+    {
+      "id": "should_trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们要进一个新市场，手上全是二手报告，心里一点底都没有",
+      "expected_behavior": "调用 maoxuan-investigate，并按卡片的 E 段执行",
+      "notes": ""
+    },
+    {
+      "id": "should_trigger-02",
+      "type": "should_trigger",
+      "prompt": "用户访谈到底做多少个才够？二十个够吗",
+      "expected_behavior": "调用 maoxuan-investigate，并按卡片的 E 段执行",
+      "notes": ""
+    },
+    {
+      "id": "should_trigger-03",
+      "type": "should_trigger",
+      "prompt": "老板让我三天内给个判断，可我对这块业务完全不了解",
+      "expected_behavior": "调用 maoxuan-investigate，并按卡片的 E 段执行",
+      "notes": ""
+    },
+    {
+      "id": "should_not_trigger-04",
+      "type": "should_not_trigger",
+      "prompt": "同样的投诉在五个门店同时冒出来，我是该整顿店长还是改流程",
+      "expected_behavior": "不应触发 maoxuan-investigate，应触发 maoxuan-diagnose",
+      "notes": "跨 skill 混淆诱饵"
+    },
+    {
+      "id": "should_not_trigger-05",
+      "type": "should_not_trigger",
+      "prompt": "帮我查一下 PDF 转文本有哪些 Python 库",
+      "expected_behavior": "不应调用任何 maoxuan 能力",
+      "notes": ""
+    },
+    {
+      "id": "edge_case-06",
+      "type": "edge_case",
+      "prompt": "我想做个 A/B 测试验证按钮颜色对转化的影响",
+      "expected_behavior": "属边界场景，判断需给出理由",
+      "notes": ""
+    }
+  ]
+}

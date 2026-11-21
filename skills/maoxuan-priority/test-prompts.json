@@ -1,0 +1,48 @@
+{
+  "skill": "maoxuan-priority",
+  "version": "1.0.0",
+  "test_cases": [
+    {
+      "id": "should_trigger-01",
+      "type": "should_trigger",
+      "prompt": "手上有十一个需求，只有三个人，排不出优先级",
+      "expected_behavior": "调用 maoxuan-priority，并按卡片的 E 段执行",
+      "notes": ""
+    },
+    {
+      "id": "should_trigger-02",
+      "type": "should_trigger",
+      "prompt": "每个季度都列一堆重点，最后一件都没做成",
+      "expected_behavior": "调用 maoxuan-priority，并按卡片的 E 段执行",
+      "notes": ""
+    },
+    {
+      "id": "should_trigger-03",
+      "type": "should_trigger",
+      "prompt": "两个大客户同时要定制，我们的人力只能做一个",
+      "expected_behavior": "调用 maoxuan-priority，并按卡片的 E 段执行",
+      "notes": ""
+    },
+    {
+      "id": "should_not_trigger-04",
+      "type": "should_not_trigger",
+      "prompt": "预算只有竞对的十分之一，还要不要跟它打正面",
+      "expected_behavior": "不应触发 maoxuan-priority，应触发 maoxuan-concentrate",
+      "notes": "跨 skill 混淆诱饵"
+    },
+    {
+      "id": "should_not_trigger-05",
+      "type": "should_not_trigger",
+      "prompt": "帮我把这段话翻译成英文",
+      "expected_behavior": "不应调用任何 maoxuan 能力",
+      "notes": ""
+    },
+    {
+      "id": "edge_case-06",
+      "type": "edge_case",
+      "prompt": "我们既要保增长又要保利润，怎么平衡",
+      "expected_behavior": "属边界场景，判断需给出理由",
+      "notes": ""
+    }
+  ]
+}

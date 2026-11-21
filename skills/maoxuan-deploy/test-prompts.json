@@ -1,0 +1,48 @@
+{
+  "skill": "maoxuan-deploy",
+  "version": "1.0.0",
+  "test_cases": [
+    {
+      "id": "should_trigger-01",
+      "type": "should_trigger",
+      "prompt": "新制度发下去三个月了，一线一点变化都没有",
+      "expected_behavior": "调用 maoxuan-deploy，并按卡片的 E 段执行",
+      "notes": ""
+    },
+    {
+      "id": "should_trigger-02",
+      "type": "should_trigger",
+      "prompt": "试点那家店做得很好，其他二十家怎么都学不会",
+      "expected_behavior": "调用 maoxuan-deploy，并按卡片的 E 段执行",
+      "notes": ""
+    },
+    {
+      "id": "should_trigger-03",
+      "type": "should_trigger",
+      "prompt": "怎么让一线愿意按新流程做，而不是应付检查",
+      "expected_behavior": "调用 maoxuan-deploy，并按卡片的 E 段执行",
+      "notes": ""
+    },
+    {
+      "id": "should_not_trigger-04",
+      "type": "should_not_trigger",
+      "prompt": "会上定的事，会后没人跟踪",
+      "expected_behavior": "不应触发 maoxuan-deploy，应触发 maoxuan-team",
+      "notes": "跨 skill 混淆诱饵"
+    },
+    {
+      "id": "should_not_trigger-05",
+      "type": "should_not_trigger",
+      "prompt": "推荐几本讲 OKR 的书",
+      "expected_behavior": "不应调用任何 maoxuan 能力",
+      "notes": ""
+    },
+    {
+      "id": "edge_case-06",
+      "type": "edge_case",
+      "prompt": "我们团队只有五个人，还需要专门搞试点吗",
+      "expected_behavior": "属边界场景，判断需给出理由",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "skill": "maoxuan-diagnose",
+  "version": "1.0.0",
+  "test_cases": [
+    {
+      "id": "should_trigger-01",
+      "type": "should_trigger",
+      "prompt": "同样的问题在五个部门同时出现，整顿了三次没用",
+      "expected_behavior": "调用 maoxuan-diagnose，并按卡片的 E 段执行",
+      "notes": ""
+    },
+    {
+      "id": "should_trigger-02",
+      "type": "should_trigger",
+      "prompt": "公司里所有人都在等指令，没人主动做事",
+      "expected_behavior": "调用 maoxuan-diagnose，并按卡片的 E 段执行",
+      "notes": ""
+    },
+    {
+      "id": "should_not_trigger-03",
+      "type": "should_not_trigger",
+      "prompt": "下面怨气很大，但具体说不出问题在哪",
+      "expected_behavior": "不应触发 maoxuan-diagnose，应触发 maoxuan-investigate",
+      "notes": "diagnose 卡 B 段明确排除「只有感觉不对、症状不明确」的请求，应走 investigate 先调查"
+    },
+    {
+      "id": "should_not_trigger-04",
+      "type": "should_not_trigger",
+      "prompt": "我想先搞清楚一线到底是怎么想的",
+      "expected_behavior": "不应触发 maoxuan-diagnose，应触发 maoxuan-investigate",
+      "notes": "跨 skill 混淆诱饵"
+    },
+    {
+      "id": "should_not_trigger-05",
+      "type": "should_not_trigger",
+      "prompt": "帮我写一份裁员通知模板",
+      "expected_behavior": "不应调用任何 maoxuan 能力",
+      "notes": ""
+    },
+    {
+      "id": "edge_case-06",
+      "type": "edge_case",
+      "prompt": "一个员工绩效差，是制度问题还是个人问题",
+      "expected_behavior": "属边界场景，判断需给出理由",
+      "notes": ""
+    }
+  ]
+}

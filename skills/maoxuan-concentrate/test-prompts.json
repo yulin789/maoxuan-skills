@@ -1,0 +1,48 @@
+{
+  "skill": "maoxuan-concentrate",
+  "version": "1.0.0",
+  "test_cases": [
+    {
+      "id": "should_trigger-01",
+      "type": "should_trigger",
+      "prompt": "对手是行业第一，我们资源只有它的十分之一",
+      "expected_behavior": "调用 maoxuan-concentrate，并按卡片的 E 段执行",
+      "notes": ""
+    },
+    {
+      "id": "should_trigger-02",
+      "type": "should_trigger",
+      "prompt": "同时开了六个项目，每个都做到一半",
+      "expected_behavior": "调用 maoxuan-concentrate，并按卡片的 E 段执行",
+      "notes": ""
+    },
+    {
+      "id": "should_trigger-03",
+      "type": "should_trigger",
+      "prompt": "这一仗到底该投多少人进去",
+      "expected_behavior": "调用 maoxuan-concentrate，并按卡片的 E 段执行",
+      "notes": ""
+    },
+    {
+      "id": "should_not_trigger-04",
+      "type": "should_not_trigger",
+      "prompt": "这么多事我到底该先干哪一件",
+      "expected_behavior": "不应触发 maoxuan-concentrate，应触发 maoxuan-priority",
+      "notes": "跨 skill 混淆诱饵"
+    },
+    {
+      "id": "should_not_trigger-05",
+      "type": "should_not_trigger",
+      "prompt": "帮我算一下这个项目的投资回报率",
+      "expected_behavior": "不应调用任何 maoxuan 能力",
+      "notes": ""
+    },
+    {
+      "id": "edge_case-06",
+      "type": "edge_case",
+      "prompt": "我们是平台型业务，天然要几条线同时跑",
+      "expected_behavior": "属边界场景，判断需给出理由",
+      "notes": ""
+    }
+  ]
+}

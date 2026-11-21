@@ -1,0 +1,41 @@
+{
+  "skill": "maoxuan",
+  "version": "1.0.0",
+  "test_cases": [
+    {
+      "id": "should_trigger-01",
+      "type": "should_trigger",
+      "prompt": "毛选这套东西到底在讲什么方法论？我想系统了解一下",
+      "expected_behavior": "调用 maoxuan，并按卡片的 E 段执行",
+      "notes": ""
+    },
+    {
+      "id": "should_trigger-02",
+      "type": "should_trigger",
+      "prompt": "《毛泽东选集》里讲调查研究最集中的是哪几篇？",
+      "expected_behavior": "调用 maoxuan，并按卡片的 E 段执行",
+      "notes": ""
+    },
+    {
+      "id": "should_not_trigger-03",
+      "type": "should_not_trigger",
+      "prompt": "同样的推诿扯皮在三个部门同时出现，整顿过两次都没用，我该从哪下手",
+      "expected_behavior": "不应触发 maoxuan，应触发 maoxuan-diagnose",
+      "notes": "原 prompt「三个人互相推责任」不构成 diagnose 的判别信号（无分布、无反复整顿），已按 skill 的区分条件改写"
+    },
+    {
+      "id": "should_not_trigger-04",
+      "type": "should_not_trigger",
+      "prompt": "帮我把这个 CSV 按日期分组求和",
+      "expected_behavior": "不应调用任何 maoxuan 能力",
+      "notes": ""
+    },
+    {
+      "id": "edge_case-05",
+      "type": "edge_case",
+      "prompt": "你怎么评价毛泽东这个人？",
+      "expected_behavior": "属边界场景，判断需给出理由",
+      "notes": ""
+    }
+  ]
+}
